@@ -1,0 +1,27 @@
+.title_section {
+  height: 70vh;
+  /* background-image: url(../new-gifs/main03.gif); */
+  background-blend-mode: hard-light;
+  background-color: #04211e;
+  margin: 0;
+}
+
+.job_section {
+  background-size: cover;
+  flex: 1;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 200ms;
+  margin: 6px;
+}
+
+.job_section:hover,
+.job_section:active,
+.job_section:focus {
+  box-shadow: 0px 1px 30px #1a1423;
+  z-index: 1000;
+  cursor: pointer;
+}

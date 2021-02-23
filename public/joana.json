@@ -4,6 +4,29 @@
     {
       "id": 1,
       "title": "Série de Pinturas 2018 - 2020",
+      "mainGifUrl": "/images/new-gifs/01.gif",
+      "topText": [
+        {
+          "description": "series of paintings",
+          "class": "bg-black text-white"
+        }
+      ],
+      "centerText": [
+        {
+          "description": "sobre a compreênsão do vázio respiro e silêncio, expansão do movimento",
+          "class": "text-red"
+        }
+      ],
+      "bottomText": [
+        {
+          "description": "série de pinturas - 2018-2020",
+          "class": "bg-black text-white"
+        },
+        {
+          "description": "Serie von Gemälden",
+          "class": "bg-black text-white"
+        }
+      ],
       "img": [
         {
           "id": 1,
@@ -42,6 +65,14 @@
     {
       "id": 2,
       "title": "Pinturas",
+      "mainGifUrl": "/images/new-gifs/02.gif",
+      "topText": [
+        { "description": "paintings", "class": "bg-yellow text-red" }
+      ],
+      "bottomText": [
+        { "description": "pinturas - 2020", "class": "bg-orange text-red" },
+        { "description": "Gemälde", "class": "text-red darker" }
+      ],
       "img": [
         {
           "id": 1,
@@ -78,6 +109,12 @@
     {
       "id": 3,
       "title": "Collagens",
+      "mainGifUrl": "/images/new-gifs/03.gif",
+      "bottomText": [
+        { "description": "colagens", "class": "bg-black text-white" },
+        { "description": "collagen", "class": "bg-black text-red darker" },
+        { "description": "collage", "class": "bg-black text-yellow darker" }
+      ],
       "img": [
         {
           "id": 1,

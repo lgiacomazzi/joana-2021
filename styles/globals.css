@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
+
+:root {
+  --white: #ffffff;
+  --yellow: #ebe2bc;
+  --green: #0d3d41;
+  --dark: #1a1423;
+  --red: #6d0b13;
+  --violet: #241c26;
+}
+
 html,
 body {
   padding: 0;
@@ -8,6 +19,7 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
   height: -webkit-fill-available;
+  background-color: var(--dark);
 }
 
 a {
@@ -19,10 +31,12 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  position: static;
 }
 
 h2 {
   font-size: 2rem;
+  text-shadow: 0 1px var(--white);
 }
 
 h3 {
@@ -30,4 +44,74 @@ h3 {
 }
 
 h4 {
+}
+
+section {
+  z-index: 1;
+}
+
+.z-1 {
+  z-index: -1;
+}
+
+.bg-black {
+  background: black;
+}
+
+.bg-gray {
+  background: #5a5b5b;
+}
+
+.bg-red {
+  background: red;
+}
+
+.bg-yellow {
+  background: #fbde48;
+}
+
+.text-red {
+  color: red;
+}
+
+.bg-orange {
+  background: #fe8a27;
+}
+
+.bg-blue {
+  background: #05fefe;
+}
+
+.bg-white {
+  background: white;
+}
+
+.text-yellow {
+  color: #fbde48;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-blue {
+  color: #05fefe;
+}
+
+.text-green {
+  color: #69e54a;
+}
+
+.darker {
+  filter: brightness(0.6);
+}
+
+@media (max-width: 762px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 0.8rem;
+  }
 }

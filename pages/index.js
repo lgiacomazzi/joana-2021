@@ -1,55 +1,80 @@
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import Arrow from "../components/arrow";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Joana Brum</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+export async function getStaticProps(context) {
+  const response = await require("../public/joana.json");
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+  return {
+    props: { response },
+  };
+}
 
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+export default function Home(props) {
+  const renderSectionText = (job) => {
+    return (
+      <>
+        <div className={styles.top_text}>
+          {job.topText
+            ? job.topText.map((text) => (
+                <h3 key={text.description} className={text.class}>
+                  {text.description}
+                </h3>
+              ))
+            : ""}
         </div>
-      </main>
+        <div className={styles.center_text}>
+          {job.centerText
+            ? job.centerText.map((text) => (
+                <h2 key={text.description} className={text.class}>
+                  {text.description}
+                </h2>
+              ))
+            : ""}
+        </div>
+        <div className={styles.bottom_text}>
+          {job.bottomText
+            ? job.bottomText.map((text) => (
+                <h3 key={text.description} className={text.class}>
+                  {text.description}
+                </h3>
+              ))
+            : ""}
+        </div>
+      </>
+    );
+  };
 
+  const renderSection = props.response.jobs.map((job) => (
+    <Link href={"/portfolio/" + job.id} key={job.id}>
+      <section className={styles.job_section}>
+        {renderSectionText(job)}
+        <Arrow className={styles.enter} type="right" size="big" />
+        <Image
+          src={job.mainGifUrl}
+          alt={job.title}
+          className="z-1"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
+      </section>
+    </Link>
+  ));
+
+  const renderHead = (
+    <Head>
+      <title>Joana Brum</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+  );
+
+  return (
+    <div className={styles.main_body}>
+      {renderHead}
+      {renderSection}
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

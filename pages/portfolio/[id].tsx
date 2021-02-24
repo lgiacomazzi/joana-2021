@@ -42,39 +42,41 @@ export default function Job(props) {
   );
 
   const renderHeader = (
-    <div className={styles.portfolio_header}>
+    <motion.div
+      className={styles.portfolio_header}
+      animate={{ y: 0 }}
+      initial={{ y: -100 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className={styles.portfolio_title}>
         <Link href="/" scroll={false}>
           <a>
             <Arrow type="left" size="big"></Arrow>
           </a>
         </Link>
-        <motion.h1
+        <h1
           animate={{ x: 0 }}
           initial={{ x: -60 }}
           transition={{ duration: 0.5 }}
         >
           {title}
-        </motion.h1>
+        </h1>
       </div>
-      <motion.img
-        animate={{ scale: 1 }}
-        initial={{ scale: 0.8 }}
-        transition={{ duration: 0.5 }}
-        src="/images/joana-dark.svg"
-        alt="Logo Joana Brum"
-      />
-    </div>
+      <img src="/images/joana-dark.svg" alt="Logo Joana Brum" />
+    </motion.div>
   );
 
   const renderContent = img.map((image) => (
     <div className={styles.portfolio_content}>
-      <Image
-        src={image.url}
-        alt={image.title}
-        layout="fill"
-        objectFit="contain"
-      ></Image>
+      <div className={styles.portfolio_content_image}>
+        <Image
+          src={image.url}
+          alt={image.title}
+          layout="fill"
+          objectFit="contain"
+        ></Image>
+      </div>
+      <div className={styles.portfolio_content_description}>{image.title}</div>
     </div>
   ));
 

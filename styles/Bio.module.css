@@ -1,0 +1,10 @@
+.bio {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--white);
+
+  position: fixed;
+  bottom: 0;
+  z-index: 10000;
+}

@@ -1,9 +1,13 @@
+import { useContext } from "react";
+
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
 import Arrow from "../components/Arrow";
+import Bio from "../components/Bio";
 import Footer from "../components/Footer";
+import { BioContext } from "../contexts/BioContext";
 
 import { motion } from "framer-motion";
 
@@ -18,6 +22,10 @@ export async function getStaticProps(context) {
 }
 
 export default function Home(props) {
+  const { isBioActive } = useContext(BioContext);
+
+  console.log(isBioActive);
+
   const renderSectionText = (job) => {
     return (
       <>
@@ -84,6 +92,7 @@ export default function Home(props) {
     <div className={styles.main_body}>
       {renderHead}
       {renderSections}
+      <Bio visibility={isBioActive}></Bio>
       <Footer></Footer>
     </div>
   );

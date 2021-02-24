@@ -52,20 +52,37 @@
 
 .portfolio_content {
   display: flex;
+  flex-direction: column;
   scroll-snap-align: start;
   position: relative;
+}
+
+.portfolio_content_image {
   width: 90vw;
   flex: 1 0 100%;
 }
 
-.portfolio_content > div {
+.portfolio_content_image > div {
   margin-right: 15vw !important;
   margin-left: 15vw !important;
 }
 
 @media (max-width: 762px) {
-  .portfolio_content > div {
+  .portfolio_content_image > div {
     margin-right: 6px !important;
     margin-left: 6px !important;
+  }
+
+  .portfolio_header {
+    padding: 10px;
+  }
+
+  .portfolio_header h1 {
+    font-size: 0.8rem;
+    margin-right: 10px;
+  }
+
+  .portfolio_header img {
+    width: 60px;
   }
 }

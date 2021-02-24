@@ -171,6 +171,11 @@ export default function Arrow(props) {
           border-top-right-radius: 0%;
           border-bottom-right-radius: 0%;
         }
+        @media(max-width: 767px) {
+          div {
+            max-width: 40px;
+            max-height: 40px;
+        }
       `}</style>
     </div>
   );

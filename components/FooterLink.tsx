@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 type FooterLinkProps = {
   children: ReactNode;
   href?: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export default function FooterLink(props: FooterLinkProps) {

@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 export default function Arrow(props) {
   const { type, size, className } = props;
 

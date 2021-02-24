@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Arrow from "../../components/arrow";
+import Arrow from "../../components/Arrow";
 import styles from "../../styles/Job.module.css";
 
 export async function getStaticPaths() {

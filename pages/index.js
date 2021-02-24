@@ -1,7 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Arrow from "../components/arrow";
+
+import Arrow from "../components/Arrow";
+import Footer from "../components/Footer";
+
+import { motion } from "framer-motion";
+
 import styles from "../styles/Home.module.css";
 
 export async function getStaticProps(context) {
@@ -47,9 +52,13 @@ export default function Home(props) {
     );
   };
 
-  const renderSection = props.response.jobs.map((job) => (
+  const renderSections = props.response.jobs.map((job) => (
     <Link href={"/portfolio/" + job.id} key={job.id}>
-      <section className={styles.job_section}>
+      <motion.section
+        className={styles.job_section}
+        whileHover={{ scale: 1.01 }}
+        whileTap={{ scale: 0.95 }}
+      >
         {renderSectionText(job)}
         <Arrow className={styles.enter} type="right" size="big" />
         <Image
@@ -60,7 +69,7 @@ export default function Home(props) {
           objectFit="cover"
           priority
         />
-      </section>
+      </motion.section>
     </Link>
   ));
 
@@ -74,17 +83,8 @@ export default function Home(props) {
   return (
     <div className={styles.main_body}>
       {renderHead}
-      {renderSection}
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      {renderSections}
+      <Footer></Footer>
     </div>
   );
 }

@@ -53,10 +53,8 @@
 .portfolio_content {
   display: flex;
   scroll-snap-align: start;
-  margin: auto;
   position: relative;
   width: 90vw;
-  height: 100%;
   flex: 1 0 100%;
 }
 

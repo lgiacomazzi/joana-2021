@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+
+import { motion } from "framer-motion";
+
 import Arrow from "../../components/Arrow";
 import styles from "../../styles/Job.module.css";
 
@@ -46,9 +49,21 @@ export default function Job(props) {
             <Arrow type="left" size="big"></Arrow>
           </a>
         </Link>
-        <h1>{title}</h1>
+        <motion.h1
+          animate={{ x: 0 }}
+          initial={{ x: -60 }}
+          transition={{ duration: 0.5 }}
+        >
+          {title}
+        </motion.h1>
       </div>
-      <img src="/images/joana-dark.svg" alt="Logo Joana Brum" />
+      <motion.img
+        animate={{ scale: 1 }}
+        initial={{ scale: 0.8 }}
+        transition={{ duration: 0.5 }}
+        src="/images/joana-dark.svg"
+        alt="Logo Joana Brum"
+      />
     </div>
   );
 

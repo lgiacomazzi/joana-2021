@@ -54,13 +54,7 @@ export default function Job(props) {
             <Arrow type="left" size="big"></Arrow>
           </a>
         </Link>
-        <h1
-          animate={{ x: 0 }}
-          initial={{ x: -60 }}
-          transition={{ duration: 0.5 }}
-        >
-          {title}
-        </h1>
+        <h1>{title}</h1>
       </div>
       <img src="/images/joana-dark.svg" alt="Logo Joana Brum" />
     </motion.div>

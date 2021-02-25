@@ -94,7 +94,9 @@ export default function Home(props) {
     </Head>
   );
 
-  function openMenu() {}
+  function openMenu() {
+    console.log("menu");
+  }
 
   const renderBurgerMenu = (
     <motion.div

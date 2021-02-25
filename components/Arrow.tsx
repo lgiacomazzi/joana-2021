@@ -139,11 +139,12 @@ export default function Arrow(props) {
         div {
           width: ${renderSize()};
           height: ${renderSize()};
-          background: var(--dark);
+          background: black;
           display: flex;
           align-items: center;
           justify-content: center;
           position: relative;
+          border: 1px solid var(--white);
         }
         svg {
           width: 60%;

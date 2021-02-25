@@ -106,7 +106,7 @@ export default function Home(props) {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.8 }}
       transition={{ duration: 0.3 }}
-      onClick={openMenu()}
+      onClick={openMenu}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

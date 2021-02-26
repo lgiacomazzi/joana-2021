@@ -67,6 +67,7 @@
   flex-direction: column;
   scroll-snap-align: start;
   position: relative;
+  font-family: "IBM Plex Mono", sans-serif;
 }
 
 .portfolio_content_image {

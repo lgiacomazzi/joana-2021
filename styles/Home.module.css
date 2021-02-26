@@ -5,13 +5,30 @@
 .title_section {
   height: 70vh;
   position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title_section_logo {
+  width: 300px;
 }
 
 .blendMode {
   mix-blend-mode: hard-light !important;
 }
 
-.overlay::before {
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  flex: 1 0 100%;
+  z-index: -1;
+}
+
+.background::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -94,7 +111,7 @@
   cursor: pointer;
 }
 
-.burgerMenu > svg {
+.burgerMenu > img {
   width: 50%;
   height: 50%;
 }
@@ -105,6 +122,10 @@
     height: 48px;
     top: 1rem;
     left: 1rem;
+  }
+
+  .title_section_logo {
+    width: 50vw;
   }
 
   .job_section {

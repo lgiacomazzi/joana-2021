@@ -70,7 +70,7 @@ export default function Home(props) {
     <Link href={"/portfolio/" + job.id} key={job.id}>
       <motion.section
         className={styles.job_section}
-        whileHover={{ scale: 0.95 }}
+        whileHover={{ scale: 0.99 }}
         whileTap={{ scale: 0.85 }}
       >
         {renderSectionText(job)}
@@ -105,51 +105,10 @@ export default function Home(props) {
       initial={{ scale: 0 }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.8 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.3, delay: 0.3 }}
       onClick={openMenu}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="192"
-        height="192"
-        fill="#ffffff"
-        viewBox="0 0 256 256"
-      >
-        <rect width="256" height="256" fill="none"></rect>
-        <line
-          x1="40"
-          y1="128"
-          x2="216"
-          y2="128"
-          fill="none"
-          stroke="#ffffff"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="24"
-        ></line>
-        <line
-          x1="40"
-          y1="64"
-          x2="216"
-          y2="64"
-          fill="none"
-          stroke="#ffffff"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="24"
-        ></line>
-        <line
-          x1="40"
-          y1="192"
-          x2="216"
-          y2="192"
-          fill="none"
-          stroke="#ffffff"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="24"
-        ></line>
-      </svg>
+      <img src="../icons/list-bold.svg" />
     </motion.div>
   );
 
@@ -158,8 +117,16 @@ export default function Home(props) {
       {renderBurgerMenu}
       {renderHead}
       <section className={styles.title_section}>
-        <img src="../images/joana-white.svg" alt="" />
-        <div className={styles.overlay}>
+        <motion.img
+          src="../images/joana-white.svg"
+          className={styles.title_section_logo}
+          animate={{ scale: 1 }}
+          initial={{ scale: 0 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.8 }}
+          transition={{ duration: 0.3 }}
+        />
+        <div className={styles.background}>
           <Image
             src={titleGifUrl}
             className={styles.blendMode}

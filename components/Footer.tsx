@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { motion } from "framer-motion";
 
 import { BioContext } from "../contexts/BioContext";
 
@@ -28,9 +29,15 @@ export default function Footer() {
         <FooterLink href="">Contato</FooterLink>
       </div>
       {/* Create Tag Component */}
-      <div>
-        <span>created by lgiacomazzi</span>
-      </div>
+      <motion.div
+        className={styles.auth}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <span>
+          created by <span>lgiacomazzi</span>
+        </span>
+      </motion.div>
     </footer>
   );
 }

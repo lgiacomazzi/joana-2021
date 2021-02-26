@@ -35,62 +35,51 @@ export async function getStaticProps(context) {
 export default function Job(props) {
   const { title, img } = props.data;
 
-  const renderHead = (
-    <Head>
-      <title>{title} | Joana Brum</title>
-    </Head>
-  );
-
-  const renderHeader = (
-    <motion.div
-      className={styles.portfolio_header}
-      animate={{ y: 0 }}
-      initial={{ y: -100 }}
-      transition={{ duration: 0.3 }}
-    >
-      <div className={styles.portfolio_title}>
-        <Link href="/" scroll={false}>
-          <a>
-            <Arrow type="left" size="big"></Arrow>
-          </a>
-        </Link>
-        <h1>{title}</h1>
-      </div>
-      <img src="/images/joana-dark.svg" alt="Logo Joana Brum" />
-    </motion.div>
-  );
-
-  const renderContent = img.map((image) => (
-    <div className={styles.portfolio_content}>
-      <div className={styles.portfolio_content_image}>
-        <Image
-          src={image.url}
-          alt={image.title}
-          layout="fill"
-          objectFit="contain"
-        ></Image>
-      </div>
-      <div className={styles.portfolio_content_description}>{image.title}</div>
-    </div>
-  ));
-
-  const renderBody = (
-    <div className={styles.portfolio_body}>{renderContent}</div>
-  );
-
-  const renderFooter = (
-    <div className={styles.portfolio_footer}>
-      <div className={styles.left_arrow}></div>
-      <div className={styles.right_arrow}></div>
-    </div>
-  );
-
   return (
-    <main className={styles.job_page}>
-      {renderHead}
-      {renderHeader}
-      {renderBody}
-      {renderFooter}
-    </main>
+    <div className={styles.job_page}>
+      <Head>
+        <title>{title} | Joana Brum</title>
+      </Head>
+
+      <motion.div
+        className={styles.portfolio_header}
+        animate={{ y: 0 }}
+        initial={{ y: -100 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className={styles.portfolio_title}>
+          <Link href="/" scroll={false}>
+            <a>
+              <Arrow type="left" size="big"></Arrow>
+            </a>
+          </Link>
+          <h1>{title}</h1>
+        </div>
+        <img src="/images/joana-dark.svg" alt="Logo Joana Brum" />
+      </motion.div>
+
+      <div className={styles.portfolio_body}>
+        {img.map((image) => (
+          <div className={styles.portfolio_content}>
+            <div className={styles.portfolio_content_image}>
+              <Image
+                src={image.url}
+                alt={image.title}
+                layout="fill"
+                objectFit="contain"
+              ></Image>
+            </div>
+            <div className={styles.portfolio_content_description}>
+              {image.title}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className={styles.portfolio_footer}>
+        <div className={styles.left_arrow}></div>
+        <div className={styles.right_arrow}></div>
+      </div>
+    </div>
   );
 }

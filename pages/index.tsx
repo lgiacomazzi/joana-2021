@@ -71,7 +71,7 @@ export default function Home(props) {
       <motion.section
         className={styles.job_section}
         whileHover={{ scale: 0.99 }}
-        whileTap={{ scale: 0.85 }}
+        whileTap={{ scale: 0.88 }}
       >
         {renderSectionText(job)}
         <Arrow className={styles.enter} type="right" size="big" />

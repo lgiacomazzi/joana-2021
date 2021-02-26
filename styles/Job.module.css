@@ -1,17 +1,20 @@
 .job_page {
-  overflow: hidden;
+  display: grid;
+  grid-template-rows: 90px auto 90px;
+  justify-items: stretch;
+
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
+
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .portfolio_header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 30px;
   border-bottom: 3px solid var(--dark);
 }
@@ -32,22 +35,31 @@
 }
 
 .portfolio_body {
-  width: 100vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
   display: flex;
-  flex-wrap: nowrap;
-  flex-grow: 1;
+  flex-direction: row;
+
+  width: 100vw;
+
   overflow-x: scroll;
   scroll-behavior: smooth;
+  scroll-snap-stop: always;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  /* scroll-snap-stop: always; */
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -ms-overflow-style: none;
-  /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
   scrollbar-width: none;
-  background-color: white;
+
+  /* background-color: gold; */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.portfolio_body::-webkit-scrollbar {
+  display: none;
 }
 
 .portfolio_content {
@@ -58,8 +70,9 @@
 }
 
 .portfolio_content_image {
-  width: 90vw;
-  flex: 1 0 100%;
+  width: 100vw;
+  flex: 1;
+  position: relative;
 }
 
 .portfolio_content_image > div {
@@ -67,13 +80,27 @@
   margin-left: 15vw !important;
 }
 
+.portfolio_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 30px;
+  border-top: 3px solid var(--dark);
+}
+
 @media (max-width: 762px) {
+  .job_page {
+    grid-template-rows: 60px auto 60px;
+  }
+
   .portfolio_content_image > div {
     margin-right: 6px !important;
     margin-left: 6px !important;
   }
 
-  .portfolio_header {
+  .portfolio_header,
+  .portfolio_footer {
     padding: 10px;
   }
 

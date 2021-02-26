@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import styles from "../styles/components/Menu.module.css";
 
 export default function MenuToggle({ toggle }) {
+  console.log(toggle);
   return (
     <motion.button
       className={styles.menuToggle}
@@ -13,7 +14,7 @@ export default function MenuToggle({ toggle }) {
       transition={{ duration: 0.1 }}
       onClick={toggle}
     >
-      <img src="../icons/list-bold.svg" />
+      <motion.img src="../icons/list-bold.svg" />
     </motion.button>
   );
 }

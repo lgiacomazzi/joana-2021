@@ -42,8 +42,8 @@ export default function Job(props) {
       animate="jobAnimate"
       variants={{
         jobInitial: {
-          scale: 0.5,
-          borderRadius: "100px",
+          scale: 0.9,
+          borderRadius: "50px",
         },
         jobAnimate: {
           scale: 1,

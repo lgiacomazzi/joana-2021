@@ -3,7 +3,9 @@
   grid-template-rows: 90px auto 90px;
   justify-items: stretch;
 
+  height: -webkit-fill-available;
   height: 100vh;
+
   width: 100vw;
   overflow: hidden;
 

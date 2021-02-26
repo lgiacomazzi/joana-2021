@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import styles from "../styles/components/ArrowButton.module.css";
 
 export default function ArrowButton(props) {
@@ -126,7 +128,11 @@ export default function ArrowButton(props) {
   };
 
   return (
-    <div className={className}>
+    <motion.button
+      className={styles.arrowButton + " " + className}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.8 }}
+    >
       <svg
         width={renderSize()}
         height={renderSize()}
@@ -137,49 +143,7 @@ export default function ArrowButton(props) {
         {renderArrow()}
       </svg>
 
-      <style jsx>{`
-        div {
-          width: ${renderSize()};
-          height: ${renderSize()};
-          background: black;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          border: 1px solid var(--white);
-        }
-        svg {
-          width: 60%;
-          height: 60%;
-          z-index: 1;
-        }
-        ::after {
-          content: "";
-          width: 0%;
-          height: 100%;
-          position: absolute;
-          left: 0;
-          background: white;
-          transition: 300ms;
-          border-top-right-radius: 100%;
-          border-bottom-right-radius: 100%;
-          border: 1px solid var(--dark);
-          box-sizing: border-box;
-        }
-        div:hover > svg {
-          filter: invert(1);
-        }
-        div:hover::after {
-          width: 100%;
-          border-top-right-radius: 0%;
-          border-bottom-right-radius: 0%;
-        }
-        @media(max-width: 767px) {
-          div {
-            max-width: 40px;
-            max-height: 40px;
-        }
-      `}</style>
-    </div>
+      <style jsx>{``}</style>
+    </motion.button>
   );
 }

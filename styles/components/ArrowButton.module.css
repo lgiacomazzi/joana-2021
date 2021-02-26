@@ -1,0 +1,23 @@
+.arrowButton {
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid var(--white);
+  width: 40px;
+  height: 40px;
+}
+
+.arrowButton > svg {
+  width: 60%;
+  height: 60%;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .arrowButton {
+    max-width: 40px;
+    max-height: 40px;
+  }
+}

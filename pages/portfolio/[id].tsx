@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 
-import Arrow from "../../components/Arrow";
+import ArrowButton from "../../components/ArrowButton";
 import styles from "../../styles/Job.module.css";
 
 export async function getStaticPaths() {
@@ -28,15 +28,30 @@ export async function getStaticProps(context) {
   const data = response.jobs.filter((job) => job.id == id)[0];
 
   return {
-    props: { data },
+    props: data,
   };
 }
 
 export default function Job(props) {
-  const { title, img } = props.data;
+  const { title, img } = props;
 
   return (
-    <div className={styles.job_page}>
+    <motion.div
+      className={styles.job_page}
+      initial="jobInitial"
+      animate="jobAnimate"
+      variants={{
+        jobInitial: {
+          scale: 0.5,
+          borderRadius: "100px",
+        },
+        jobAnimate: {
+          scale: 1,
+          borderRadius: "0px",
+        },
+      }}
+      transition={{ duration: 0.3 }}
+    >
       <Head>
         <title>{title} | Joana Brum</title>
       </Head>
@@ -45,12 +60,12 @@ export default function Job(props) {
         className={styles.portfolio_header}
         animate={{ y: 0 }}
         initial={{ y: -100 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
       >
         <div className={styles.portfolio_title}>
           <Link href="/" scroll={false}>
             <a>
-              <Arrow type="left" size="big"></Arrow>
+              <ArrowButton type="left" size="big"></ArrowButton>
             </a>
           </Link>
           <h1>{title}</h1>
@@ -60,7 +75,7 @@ export default function Job(props) {
 
       <div className={styles.portfolio_body}>
         {img.map((image) => (
-          <div className={styles.portfolio_content}>
+          <div key={image.id} className={styles.portfolio_content}>
             <div className={styles.portfolio_content_image}>
               <Image
                 src={image.url}
@@ -76,10 +91,25 @@ export default function Job(props) {
         ))}
       </div>
 
-      <div className={styles.portfolio_footer}>
+      <motion.div
+        className={styles.portfolio_footer}
+        initial="footerInitial"
+        animate="footerAnimate"
+        variants={{
+          footerInitial: {
+            opacity: 0,
+            y: 100,
+          },
+          footerAnimate: {
+            opacity: 1,
+            y: 0,
+          },
+        }}
+        transition={{ duration: 0.3, delay: 0.2 }}
+      >
         <div className={styles.left_arrow}></div>
         <div className={styles.right_arrow}></div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

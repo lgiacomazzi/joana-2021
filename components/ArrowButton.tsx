@@ -1,4 +1,6 @@
-export default function Arrow(props) {
+import styles from "../styles/components/ArrowButton.module.css";
+
+export default function ArrowButton(props) {
   const { type, size, className } = props;
 
   const renderArrow = () => {

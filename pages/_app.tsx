@@ -1,12 +1,22 @@
 import "../styles/globals.css";
-
-import { BioContextProvider } from "../contexts/BioContext";
+import { motion } from "framer-motion";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <BioContextProvider>
+    <motion.div
+      initial="pageInitial"
+      animate="pageAnimate"
+      variants={{
+        pageInitial: {
+          opacity: 0,
+        },
+        pageAnimate: {
+          opacity: 1,
+        },
+      }}
+    >
       <Component {...pageProps} />
-    </BioContextProvider>
+    </motion.div>
   );
 }
 

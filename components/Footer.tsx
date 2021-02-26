@@ -5,7 +5,7 @@ import { BioContext } from "../contexts/BioContext";
 
 import FooterLink from "./FooterLink";
 
-import styles from "../styles/Footer.module.css";
+import styles from "../styles/components/Footer.module.css";
 
 export default function Footer() {
   const { toggleBio } = useContext(BioContext);

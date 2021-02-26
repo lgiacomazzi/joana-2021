@@ -12,7 +12,8 @@
     "next": "10.0.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "swup": "^2.0.14"
+    "swup": "^2.0.14",
+    "wheelz": "^1.0.4"
   },
   "devDependencies": {
     "@types/node": "^14.14.31",

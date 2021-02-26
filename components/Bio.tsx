@@ -1,19 +1,15 @@
-import { useContext } from "react";
-
-import { BioContext } from "../contexts/BioContext";
-
 import { motion } from "framer-motion";
 
-import styles from "../styles/Bio.module.css";
+import styles from "../styles/components/Bio.module.css";
 
 type BioProps = {
-  visibility: boolean;
+  isBioOpen?: boolean;
 };
 
-export default function Bio(props: BioProps) {
-  const { visibility } = props;
-
-  const { toggleBio } = useContext(BioContext);
+export default function Bio({ isBioOpen }: BioProps) {
+  function toggleBio() {
+    console.log("bio!");
+  }
 
   const variants = {
     true: { y: 0 },
@@ -25,7 +21,7 @@ export default function Bio(props: BioProps) {
       className={styles.bio}
       transition={{ duration: 0.5 }}
       initial="false"
-      animate={visibility.toString()}
+      animate={isBioOpen ?? false}
       variants={variants}
     >
       biografia

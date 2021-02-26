@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from "react";
 
 type BioContextData = {
-  isBioActive: boolean;
+  isBioOpen: boolean;
   toggleBio: () => void;
 };
 
@@ -22,7 +22,7 @@ export function BioContextProvider({ children }: BioContextProviderProps) {
     }
   }
   return (
-    <BioContext.Provider value={{ isBioActive: visibility, toggleBio }}>
+    <BioContext.Provider value={{ isBioOpen: visibility, toggleBio }}>
       {children}
     </BioContext.Provider>
   );

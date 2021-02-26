@@ -1,0 +1,56 @@
+.menuNavigation {
+  padding-left: 4vw;
+  padding-top: 16vh;
+}
+
+.menuToggle {
+  position: fixed;
+  top: 4vh;
+  left: 4vw;
+  z-index: 1001;
+
+  width: 60px;
+  height: 60px;
+  /* border-radius: 100%; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: black;
+  border: 1px solid white;
+  box-shadow: rgb(0 0 0 / 4%) 0px 4px 0px;
+
+  cursor: pointer;
+}
+
+.menuToggle > img {
+  width: 50%;
+  height: 50%;
+}
+
+.menuBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: white;
+}
+
+.menuLink {
+  font-size: 2rem;
+  padding: 0.5em;
+}
+
+@media (max-width: 762px) {
+  .menuToggle {
+    width: 48px;
+    height: 48px;
+    top: 1rem;
+    left: 1rem;
+  }
+}

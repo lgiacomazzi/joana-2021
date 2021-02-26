@@ -37,14 +37,17 @@
 }
 
 .job_section {
-  flex: 1;
-  height: 90vh;
   position: relative;
+  height: 90vh;
+
+  margin: 10px;
+
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 200ms;
-  margin: 10px;
+
+  overflow: hidden;
 }
 
 .job_section:hover,
@@ -90,40 +93,7 @@
   padding: 1rem 1.3rem;
 }
 
-.burgerMenu {
-  position: fixed;
-  top: 4vh;
-  left: 4vw;
-  z-index: 1001;
-
-  width: 60px;
-  height: 60px;
-  /* border-radius: 100%; */
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: black;
-  border: 1px solid white;
-  box-shadow: rgb(0 0 0 / 4%) 0px 4px 0px;
-
-  cursor: pointer;
-}
-
-.burgerMenu > img {
-  width: 50%;
-  height: 50%;
-}
-
 @media (max-width: 762px) {
-  .burgerMenu {
-    width: 48px;
-    height: 48px;
-    top: 1rem;
-    left: 1rem;
-  }
-
   .title_section_logo {
     width: 50vw;
   }

@@ -146,6 +146,24 @@
           "description": "description"
         }
       ]
+    },
+    {
+      "id": 4,
+      "title": "Fotos",
+      "mainGifUrl": "/images/new-gifs/04.gif",
+      "topText": [
+        { "description": "o gesto e o tempo", "class": "text-white" },
+        { "description": "die Geste und die Zeit", "class": "text-black" },
+        {
+          "description": "the gesture and the time",
+          "class": "bg-white text-blue"
+        }
+      ],
+      "bottomText": [
+        { "description": "o tempo do gesto", "class": "text-black" },
+        { "description": "dZeit und Geste", "class": "text-black" }
+      ],
+      "img": []
     }
   ]
 }

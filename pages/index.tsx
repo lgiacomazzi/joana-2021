@@ -1,36 +1,30 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import Arrow from "../components/Arrow";
+import ArrowButton from "../components/ArrowButton";
 import Bio from "../components/Bio";
 import Footer from "../components/Footer";
-import { BioContext } from "../contexts/BioContext";
+import Menu from "../components/Menu";
 
 import { motion } from "framer-motion";
 
 import styles from "../styles/Home.module.css";
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const response = await require("../public/joana.json");
 
   return {
-    props: { response },
+    props: response,
   };
 }
 
 export default function Home(props) {
-  const {
-    titleGifUrl,
-    mainGif1Url,
-    mainGif2Url,
-    mainGif3Url,
-    jobs,
-  } = props.response;
+  const { titleGifUrl, mainGif1Url, mainGif2Url, mainGif3Url, jobs } = props;
 
-  const { isBioActive } = useContext(BioContext);
+  const [isBioOpen, setIsBioOpen] = useState(false);
 
   const renderSectionText = (job) => {
     return (
@@ -72,9 +66,10 @@ export default function Home(props) {
         className={styles.job_section}
         whileHover={{ scale: 0.99 }}
         whileTap={{ scale: 0.88 }}
+        transition={{ duration: 0.5 }}
       >
         {renderSectionText(job)}
-        <Arrow className={styles.enter} type="right" size="big" />
+        <ArrowButton className={styles.enter} type="right" size="big" />
         <Image
           src={job.mainGifUrl}
           alt={job.title}
@@ -87,35 +82,15 @@ export default function Home(props) {
     </Link>
   ));
 
-  const renderHead = (
-    <Head>
-      <title>Joana Brum</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-  );
-
-  function openMenu() {
-    console.log("menu");
-  }
-
-  const renderBurgerMenu = (
-    <motion.div
-      className={styles.burgerMenu}
-      animate={{ scale: 1 }}
-      initial={{ scale: 0 }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.8 }}
-      transition={{ duration: 0.3, delay: 0.3 }}
-      onClick={openMenu}
-    >
-      <img src="../icons/list-bold.svg" />
-    </motion.div>
-  );
-
   return (
     <div className={styles.main_body}>
-      {renderBurgerMenu}
-      {renderHead}
+      <Menu />
+
+      <Head>
+        <title>Joana Brum</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <section className={styles.title_section}>
         <motion.img
           src="../images/joana-white.svg"
@@ -136,8 +111,11 @@ export default function Home(props) {
           />
         </div>
       </section>
+
       {renderSections}
-      <Bio visibility={isBioActive}></Bio>
+
+      <Bio isBioOpen={isBioOpen}></Bio>
+
       <Footer></Footer>
     </div>
   );

@@ -991,6 +991,11 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
+kinet@^2.2.0:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/kinet/-/kinet-2.2.1.tgz#25aa218fb510e7c649197041ed5a8901d3f29e08"
+  integrity sha512-UmnTPmnEokjxBeB3gPkOnTwRlIUaAeB+t21E+HJGzRKCGdJTUF3CTztK5yzzEuBQ1BZ0I0ovrY73+ctpPWFIOg==
+
 line-column@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/line-column/-/line-column-1.0.2.tgz#d25af2936b6f4849172b312e4792d1d987bc34a2"
@@ -2031,6 +2036,13 @@ whatwg-url@^7.0.0:
     lodash.sortby "^4.7.0"
     tr46 "^1.0.1"
     webidl-conversions "^4.0.2"
+
+wheelz@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/wheelz/-/wheelz-1.0.4.tgz#85d1eb6808883d96101680f6847725bc9b79ec8c"
+  integrity sha512-7BVgv2tQ4jErb0i+4J4JG/eeGkA6L649jBVQDFm1tAZQ7ysfqo/jHXLAcV+GInWM0Bt2bUBAsJfp3PH8SjGb6A==
+  dependencies:
+    kinet "^2.2.0"
 
 which-pm-runs@^1.0.0:
   version "1.0.0"

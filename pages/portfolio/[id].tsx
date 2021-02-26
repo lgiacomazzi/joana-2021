@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import ArrowButton from "../../components/ArrowButton";
 import styles from "../../styles/Job.module.css";
@@ -58,8 +58,18 @@ export default function Job(props) {
 
       <motion.div
         className={styles.portfolio_header}
-        animate={{ y: 0 }}
-        initial={{ y: -100 }}
+        initial="headerInitial"
+        animate="headerAnimate"
+        variants={{
+          headerInitial: {
+            opacity: 0,
+            y: -100,
+          },
+          headerAnimate: {
+            opacity: 1,
+            y: 0,
+          },
+        }}
         transition={{ duration: 0.3, delay: 0.2 }}
       >
         <div className={styles.portfolio_title}>
@@ -74,21 +84,44 @@ export default function Job(props) {
       </motion.div>
 
       <div className={styles.portfolio_body}>
-        {img.map((image) => (
-          <div key={image.id} className={styles.portfolio_content}>
-            <div className={styles.portfolio_content_image}>
-              <Image
-                src={image.url}
-                alt={image.title}
-                layout="fill"
-                objectFit="contain"
-              ></Image>
+        <AnimatePresence>
+          {img.map((image) => (
+            <div key={image.id} className={styles.portfolio_content}>
+              <motion.div
+                className={styles.portfolio_content_image}
+                initial="imageInitial"
+                animate="imageAnimate"
+                exit="imageExit"
+                variants={{
+                  imageInitial: {
+                    opacity: 0,
+                    scale: 0.9,
+                    x: 100,
+                  },
+                  imageAnimate: {
+                    opacity: 1,
+                    scale: 1,
+                    x: 0,
+                  },
+                  imageExit: {
+                    opacity: 0,
+                  },
+                }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+              >
+                <Image
+                  src={image.url}
+                  alt={image.title}
+                  layout="fill"
+                  objectFit="contain"
+                ></Image>
+              </motion.div>
+              <div className={styles.portfolio_content_description}>
+                {image.title}
+              </div>
             </div>
-            <div className={styles.portfolio_content_description}>
-              {image.title}
-            </div>
-          </div>
-        ))}
+          ))}
+        </AnimatePresence>
       </div>
 
       <motion.div
@@ -107,8 +140,8 @@ export default function Job(props) {
         }}
         transition={{ duration: 0.3, delay: 0.2 }}
       >
-        <div className={styles.left_arrow}></div>
-        <div className={styles.right_arrow}></div>
+        <ArrowButton type="left" size="big"></ArrowButton>
+        <ArrowButton type="right" size="big"></ArrowButton>
       </motion.div>
     </motion.div>
   );

@@ -84,8 +84,6 @@ export default function Home(props) {
 
   return (
     <div className={styles.main_body}>
-      <Menu />
-
       <Head>
         <title>Joana Brum</title>
         <link rel="icon" href="/favicon.ico" />
@@ -95,8 +93,8 @@ export default function Home(props) {
         <motion.img
           src="../images/joana-white.svg"
           className={styles.title_section_logo}
-          animate={{ scale: 1 }}
-          initial={{ scale: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          initial={{ scale: 0, opacity: 0 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.8 }}
           transition={{ duration: 0.3 }}

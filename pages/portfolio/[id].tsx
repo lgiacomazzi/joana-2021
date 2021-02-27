@@ -43,11 +43,11 @@ export default function Job(props) {
       variants={{
         jobInitial: {
           scale: 0.9,
-          borderRadius: "50px",
+          x: -100,
         },
         jobAnimate: {
           scale: 1,
-          borderRadius: "0px",
+          x: 0,
         },
       }}
       transition={{ duration: 0.3 }}

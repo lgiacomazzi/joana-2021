@@ -5,11 +5,8 @@ import { motion } from "framer-motion";
 import styles from "../styles/Job.module.css";
 import { useState } from "react";
 
-type PortfolioBodyData = {
-  images: Array;
-};
-export default function PortfolioBody({ images }: PortfolioBodyData) {
-  const [[page, direction], setPage] = useState([0, 0]);
+export default function PortfolioBody({ images }) {
+  //   const [[page, direction], setPage] = useState([0, 0]);
 
   return (
     <motion.div className={styles.portfolio_body}>

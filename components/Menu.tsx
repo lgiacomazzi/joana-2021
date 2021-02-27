@@ -12,14 +12,12 @@ export default function Menu() {
 
   const variants = {
     closed: {
-      opacity: 0,
-      x: -100,
-      zIndex: 0,
+      opacity: 0.7,
+      x: "-100%",
     },
     open: {
       opacity: 1,
       x: 0,
-      zIndex: 999,
     },
   };
 

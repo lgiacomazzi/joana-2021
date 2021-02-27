@@ -99,7 +99,7 @@ export default function Home(props) {
           initial={{ scale: 0, opacity: 0 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.8 }}
-          transition={{ duration: 0.3 }}
+          transition={{ type: "spring", bounce: 0.5 }}
         />
         <div className={styles.background}>
           <Image

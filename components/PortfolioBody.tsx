@@ -19,7 +19,7 @@ export default function PortfolioBody({ images }: PortfolioBodyData) {
             className={styles.portfolio_content_image}
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
-            transition={{ type: "spring", bounce: 0.5, delay: 0.2 }}
+            transition={{ type: "spring", bounce: 0.5 }}
           >
             <Image
               src={image.url}

@@ -61,7 +61,6 @@ export default function Job(props) {
           opacity: 0,
         },
       }}
-      transition={{ staggerChildren: 0.07, delayChildren: 2 }}
     >
       <Head>
         <title>{title} | Joana Brum</title>
@@ -69,18 +68,19 @@ export default function Job(props) {
 
       <motion.div
         className={styles.portfolio_header}
-        initial="jobInitial"
-        animate="jobAnimate"
+        initial="headerInitial"
+        animate="headerAnimate"
         variants={{
-          jobInitial: {
+          headerInitial: {
             opacity: 0,
             y: -100,
           },
-          jobAnimate: {
+          headerAnimate: {
             opacity: 1,
             y: 0,
           },
         }}
+        transition={{ delay: 0.2 }}
       >
         <div className={styles.portfolio_title}>
           <Link href="/" scroll={false}>
@@ -109,6 +109,7 @@ export default function Job(props) {
             y: 0,
           },
         }}
+        transition={{ delay: 0.2 }}
       >
         <ArrowButton type="left" size="big"></ArrowButton>
         <ArrowButton type="right" size="big"></ArrowButton>

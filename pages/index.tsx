@@ -84,6 +84,8 @@ export default function Home(props) {
 
   return (
     <div className={styles.main_body}>
+      <Menu />
+
       <Head>
         <title>Joana Brum</title>
         <link rel="icon" href="/favicon.ico" />

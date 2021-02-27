@@ -40,16 +40,6 @@ export default function Job(props) {
       className={styles.job_page}
       initial="jobInitial"
       animate="jobAnimate"
-      variants={{
-        jobInitial: {
-          scale: 0.9,
-          x: -100,
-        },
-        jobAnimate: {
-          scale: 1,
-          x: 0,
-        },
-      }}
       transition={{ duration: 0.3 }}
     >
       <Head>

@@ -3,10 +3,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import styles from "../styles/components/Menu.module.css";
+import { Url } from "url";
 
 type MenuLinkProps = {
   children: ReactNode;
-  href?: String;
+  href?: Url;
   onClick?: () => void;
 };
 

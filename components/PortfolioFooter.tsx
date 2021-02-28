@@ -31,7 +31,6 @@ export default function PortfolioFooter() {
       <ArrowButton
         type="left"
         size="big"
-        disabled={page === 0 ?? true}
         onClick={() => paginate(-1)}
       ></ArrowButton>
 

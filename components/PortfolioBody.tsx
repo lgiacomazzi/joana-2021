@@ -9,11 +9,11 @@ export default function PortfolioBody({ images }) {
   //   const [[page, direction], setPage] = useState([0, 0]);
 
   return (
-    <motion.div className={styles.portfolio_body}>
+    <motion.div className={styles.portfolioBody}>
       {images.map((image) => (
-        <div key={image.id} className={styles.portfolio_content}>
+        <div key={image.id} className={styles.portfolioContent}>
           <motion.div
-            className={styles.portfolio_content_image}
+            className={styles.portfolioContentImage}
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", bounce: 0.5 }}
@@ -26,7 +26,7 @@ export default function PortfolioBody({ images }) {
             ></Image>
           </motion.div>
           <motion.div
-            className={styles.portfolio_content_description}
+            className={styles.portfolioContentDescription}
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{ type: "spring", delay: 0.3 }}

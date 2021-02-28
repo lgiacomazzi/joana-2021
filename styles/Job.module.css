@@ -1,10 +1,10 @@
-.job_page {
+.jobPage {
   display: grid;
   grid-template-rows: 90px auto 90px;
   justify-items: stretch;
 
   min-height: 100vh;
-  min-height: -webkit-fill-available;
+  height: -webkit-fill-available;
 
   width: 100vw;
   overflow: hidden;
@@ -12,7 +12,7 @@
   background-color: white;
 }
 
-.portfolio_header {
+.portfolioHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,22 +21,22 @@
   border-bottom: 3px solid var(--dark);
 }
 
-.portfolio_title {
+.portfolioTitle {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.portfolio_header h1 {
+.portfolioHeader h1 {
   font-size: 1.2rem;
   margin-left: 10px;
 }
 
-.portfolio_header img {
+.portfolioHeader img {
   width: 120px;
 }
 
-.portfolio_body {
+.portfolioBody {
   margin-top: 10px;
   margin-bottom: 10px;
 
@@ -60,29 +60,29 @@
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.portfolio_body::-webkit-scrollbar {
+.portfolioBody::-webkit-scrollbar {
   display: none;
 }
 
-.portfolio_content {
+.portfolioContent {
   display: flex;
   flex-direction: column;
   scroll-snap-align: start;
   position: relative;
 }
 
-.portfolio_content_image {
+.portfolioContentImage {
   width: 100vw;
   flex: 1;
   position: relative;
 }
 
-.portfolio_content_image > div {
+.portfolioContentImage > div {
   margin-right: 15vw !important;
   margin-left: 15vw !important;
 }
 
-.portfolio_content_description {
+.portfolioContentDescription {
   font-family: "IBM Plex Mono", sans-serif;
   font-weight: 300;
   font-size: 12px;
@@ -90,7 +90,7 @@
   text-align: center;
 }
 
-.portfolio_footer {
+.portfolioFooter {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -100,26 +100,26 @@
 }
 
 @media (max-width: 762px) {
-  .job_page {
+  .jobPage {
     grid-template-rows: 60px auto 60px;
   }
 
-  .portfolio_content_image > div {
+  .portfolioContentImage > div {
     margin-right: 16px !important;
     margin-left: 16px !important;
   }
 
-  .portfolio_header,
-  .portfolio_footer {
+  .portfolioHeader,
+  .portfolioFooter {
     padding: 10px;
   }
 
-  .portfolio_header h1 {
+  .portfolioHeader h1 {
     font-size: 0.8rem;
     margin-right: 10px;
   }
 
-  .portfolio_header img {
+  .portfolioHeader img {
     width: 60px;
   }
 }

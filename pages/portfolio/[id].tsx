@@ -41,7 +41,7 @@ export default function Job(props) {
   return (
     // <AnimatePresence exitBeforeEnter>
     <motion.div
-      className={styles.job_page}
+      className={styles.jobPage}
       initial="jobInitial"
       animate="jobAnimate"
       exit="jobExit"
@@ -67,7 +67,7 @@ export default function Job(props) {
       </Head>
 
       <motion.div
-        className={styles.portfolio_header}
+        className={styles.portfolioHeader}
         initial="headerInitial"
         animate="headerAnimate"
         variants={{
@@ -82,7 +82,7 @@ export default function Job(props) {
         }}
         transition={{ delay: 0.2 }}
       >
-        <div className={styles.portfolio_title}>
+        <div className={styles.portfolioTitle}>
           <Link href="/" scroll={false}>
             <a>
               <ArrowButton type="left" size="big"></ArrowButton>
@@ -96,7 +96,7 @@ export default function Job(props) {
       <PortfolioBody images={img}></PortfolioBody>
 
       <motion.div
-        className={styles.portfolio_footer}
+        className={styles.portfolioFooter}
         initial="footerInitial"
         animate="footerAnimate"
         variants={{

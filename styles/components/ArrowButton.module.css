@@ -9,6 +9,11 @@
   height: 40px;
 }
 
+.arrowButton:disabled {
+  filter: opacity(0.5);
+  cursor: not-allowed;
+}
+
 .arrowButton > svg {
   width: 60%;
   height: 60%;

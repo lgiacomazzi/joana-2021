@@ -8,6 +8,10 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import ArrowButton from "../../components/ArrowButton";
 import PortfolioBody from "../../components/PortfolioBody";
+import PortfolioFooter from "../../components/PortfolioFooter";
+
+import { JobContext, JobContextProvider } from "../../contexts/JobContext";
+
 import styles from "../../styles/Job.module.css";
 
 export async function getStaticPaths() {
@@ -48,7 +52,7 @@ export default function Job(props) {
         jobInitial: {
           scale: 0.8,
           opacity: 0,
-          borderRadius: 20,
+          borderRadius: 200,
         },
         jobAnimate: {
           scale: 1,
@@ -92,27 +96,10 @@ export default function Job(props) {
         <img src="/images/joana-dark.svg" alt="Logo Joana Brum" />
       </motion.div>
 
-      <PortfolioBody images={img}></PortfolioBody>
-
-      <motion.div
-        className={styles.portfolioFooter}
-        initial="footerInitial"
-        animate="footerAnimate"
-        variants={{
-          footerInitial: {
-            opacity: 0,
-            y: 100,
-          },
-          footerAnimate: {
-            opacity: 1,
-            y: 0,
-          },
-        }}
-        transition={{ delay: 0.2 }}
-      >
-        <ArrowButton type="left" size="big"></ArrowButton>
-        <ArrowButton type="right" size="big"></ArrowButton>
-      </motion.div>
+      <JobContextProvider>
+        <PortfolioBody images={img}></PortfolioBody>
+        <PortfolioFooter />
+      </JobContextProvider>
     </motion.div>
   );
 }

@@ -71,6 +71,21 @@
   position: relative;
 }
 
+.errorSign {
+  margin: auto;
+  text-align: center;
+}
+
+.errorSign > img {
+  width: 60px;
+  height: 60px;
+}
+
+.errorSign > p {
+  font-size: 12px;
+  text-align: center;
+}
+
 .portfolioContentImage {
   width: 100vw;
   flex: 1;

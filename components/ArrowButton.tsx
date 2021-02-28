@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import styles from "../styles/components/ArrowButton.module.css";
 
 export default function ArrowButton(props) {
-  const { type, size, className } = props;
+  const { type, size, className, onClick } = props;
 
   const renderArrow = () => {
     switch (type) {
@@ -132,6 +132,7 @@ export default function ArrowButton(props) {
       className={styles.arrowButton + " " + className}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.8 }}
+      onClick={onClick}
     >
       <svg
         width={renderSize()}
@@ -142,8 +143,6 @@ export default function ArrowButton(props) {
       >
         {renderArrow()}
       </svg>
-
-      <style jsx>{``}</style>
     </motion.button>
   );
 }

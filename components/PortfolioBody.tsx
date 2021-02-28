@@ -25,9 +25,14 @@ export default function PortfolioBody({ images }) {
               objectFit="contain"
             ></Image>
           </motion.div>
-          <div className={styles.portfolio_content_description}>
+          <motion.div
+            className={styles.portfolio_content_description}
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", delay: 0.3 }}
+          >
             {image.title}
-          </div>
+          </motion.div>
         </div>
       ))}
     </motion.div>

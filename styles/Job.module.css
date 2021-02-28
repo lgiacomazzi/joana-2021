@@ -82,6 +82,12 @@
   margin-left: 15vw !important;
 }
 
+.portfolioContentImage {
+  background-image: url("/images/loader.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .portfolioContentDescription {
   font-family: "IBM Plex Mono", sans-serif;
   font-weight: 300;

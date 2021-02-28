@@ -36,10 +36,10 @@ export default function Menu() {
         isMenuOpen={isMenuOpen}
       ></MenuToggle>
       <motion.div className={styles.menuBackground} variants={variants}>
-        <MenuLink href="/shop">Shop</MenuLink>
-        <MenuLink href="/bio">Biografia</MenuLink>
-        <MenuLink href="/instagram">Instagram</MenuLink>
-        <MenuLink href="/contato">Contato</MenuLink>
+        <MenuLink>Shop</MenuLink>
+        <MenuLink>Biografia</MenuLink>
+        <MenuLink>Instagram</MenuLink>
+        <MenuLink>Contato</MenuLink>
       </motion.div>
     </motion.nav>
   );

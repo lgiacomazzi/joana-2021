@@ -20,6 +20,12 @@ export default function Menu() {
       borderBottomRightRadius: "0vw",
       x: 0,
       y: 0,
+      transition: {
+        type: "spring",
+        bounce: 0,
+        delayChildren: 0.5,
+        staggerChildren: 0.2,
+      },
     },
   };
 
@@ -29,11 +35,12 @@ export default function Menu() {
         toggle={() => setIsMenuOpen(!isMenuOpen)}
         isMenuOpen={isMenuOpen}
       ></MenuToggle>
-      <motion.div
-        className={styles.menuBackground}
-        variants={variants}
-        transition={{ type: "spring", bounce: 0 }}
-      ></motion.div>
+      <motion.div className={styles.menuBackground} variants={variants}>
+        <MenuLink href="/shop">Shop</MenuLink>
+        <MenuLink href="/bio">Biografia</MenuLink>
+        <MenuLink href="/instagram">Instagram</MenuLink>
+        <MenuLink href="/contato">Contato</MenuLink>
+      </motion.div>
     </motion.nav>
   );
 }

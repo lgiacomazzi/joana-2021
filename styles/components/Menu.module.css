@@ -35,16 +35,23 @@
   left: 0;
   z-index: 1000;
 
-  width: 100vw;
+  width: 40vw;
   height: 100vh;
 
   background-color: rgb(255 255 255 / 10%);
   backdrop-filter: blur(8px);
+
+  padding-top: 12vh;
+  padding-left: 4vw;
 }
 
 .menuLink {
   font-size: 2rem;
   padding: 0.5em;
+  background: white;
+  width: fit-content;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 @media (max-width: 762px) {
@@ -53,5 +60,9 @@
     height: 48px;
     top: 1rem;
     left: 1rem;
+  }
+
+  .menuBackground {
+    width: 100%;
   }
 }

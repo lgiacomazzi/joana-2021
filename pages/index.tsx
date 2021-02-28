@@ -9,7 +9,7 @@ import Bio from "../components/Bio";
 import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import styles from "../styles/Home.module.css";
 
@@ -83,7 +83,26 @@ export default function Home(props) {
   ));
 
   return (
-    <div className={styles.main_body}>
+    <motion.div
+      className={styles.main_body}
+      initial="homeInitial"
+      animate="homeAnimate"
+      exit="homeExit"
+      variants={{
+        homeInitial: {
+          y: 100,
+          opacity: 0,
+        },
+        homeAnimate: {
+          y: 0,
+          opacity: 1,
+        },
+        homeExit: {
+          x: "100%",
+          opacity: 0,
+        },
+      }}
+    >
       <Menu />
 
       <Head>
@@ -117,6 +136,6 @@ export default function Home(props) {
       <Bio isBioOpen={isBioOpen}></Bio>
 
       <Footer></Footer>
-    </div>
+    </motion.div>
   );
 }

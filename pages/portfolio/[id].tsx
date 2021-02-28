@@ -39,7 +39,6 @@ export default function Job(props) {
   const { title, img } = props;
 
   return (
-    // <AnimatePresence exitBeforeEnter>
     <motion.div
       className={styles.jobPage}
       initial="jobInitial"
@@ -115,6 +114,5 @@ export default function Job(props) {
         <ArrowButton type="right" size="big"></ArrowButton>
       </motion.div>
     </motion.div>
-    // </AnimatePresence>
   );
 }

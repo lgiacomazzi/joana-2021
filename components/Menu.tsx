@@ -12,21 +12,27 @@ export default function Menu() {
 
   const variants = {
     closed: {
-      opacity: 0.7,
+      borderBottomRightRadius: "100vw",
       x: "-100%",
+      y: "-100%",
     },
     open: {
-      opacity: 1,
+      borderBottomRightRadius: "0vw",
       x: 0,
+      y: 0,
     },
   };
 
   return (
     <motion.nav initial={false} animate={isMenuOpen ? "open" : "closed"}>
-      <MenuToggle toggle={() => setIsMenuOpen(!isMenuOpen)}></MenuToggle>
+      <MenuToggle
+        toggle={() => setIsMenuOpen(!isMenuOpen)}
+        isMenuOpen={isMenuOpen}
+      ></MenuToggle>
       <motion.div
         className={styles.menuBackground}
         variants={variants}
+        transition={{ type: "spring", bounce: 0 }}
       ></motion.div>
     </motion.nav>
   );

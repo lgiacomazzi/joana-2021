@@ -36,34 +36,32 @@
         {
           "id": 1,
           "url": "/images/job1/01.jpg",
-          "title": "Transformo tinta em seiva bruta me nutro do natural,(100x170cm) Tinta acrílica sobre canvas 2019"
+          "title": "Transformo tinta em seiva bruta me nutro do natural (100x170cm), Tinta acrílica sobre canvas, 2019"
         },
         {
           "id": 2,
           "url": "/images/job1/02.jpg",
-          "title": "Contraponto Visual, (200x170cm) Tinta acrilica sobre canvas, 2020. "
+          "title": "Contraponto Visual, (200x170cm), Tinta acrilica sobre canvas, 2020."
         },
         {
           "id": 3,
           "url": "/images/job1/03.jpg",
-          "title": ""
+          "title": "Contraponto Visual, (200x170cm), Tinta acrilica sobre canvas, 2020."
         },
         {
           "id": 4,
           "url": "/images/job1/04.jpg",
-          "title": ""
+          "title": "Transbordar para nutrir (170x150cm), Tinta acrílica sobre canvas,2020."
         },
         {
           "id": 5,
           "url": "/images/job1/05.jpg",
-          "title": "title",
-          "description": "description"
+          "title": "AUTO MOVIMENTO EXPRESSO EXTERNO VEM DE DENTRO MAS CONSEGUE SAIR PARA FORA (190x300cm), Técnica mista sobre canvas, 2018"
         },
         {
           "id": 6,
           "url": "/images/job1/06.jpg",
-          "title": "title",
-          "description": "description"
+          "title": "LUPA CALEDOSCÓPICA ASSIMÉTRICA PULSA RESISTÊNCIA CONDENSA DÚVIDAS E REPRESENTA IDEIAS (190x300cm), Tinta acrílica sobre canvas, 2018"
         }
       ]
     },
@@ -82,32 +80,37 @@
         {
           "id": 1,
           "url": "/images/job2/01.jpg",
-          "title": "title",
-          "description": "description"
+          "title": "O intervalo entre o gesto e o toque (170x140cm). Tinta acrílica sobre canvas, 2020."
         },
         {
           "id": 2,
           "url": "/images/job2/02.jpg",
-          "title": "title",
-          "description": "description"
+          "title": "Sobre os vícios, uma solução musical (150×160cm). Tinta acrílica sobre canvas, 2020."
         },
         {
           "id": 3,
           "url": "/images/job2/03.jpg",
-          "title": "title",
-          "description": "description"
+          "title": "Pescaria imagética (155x155cm). Tinta acrílica sobre canvas, 2020."
         },
         {
           "id": 4,
           "url": "/images/job2/04.jpg",
-          "title": "title",
-          "description": "description"
+          "title": "Pintura com cor (155x110cm). Tinta acrílica sobre canvas, 2020"
         },
         {
           "id": 5,
           "url": "/images/job2/05.jpg",
-          "title": "title",
-          "description": "description"
+          "title": "Expandindo no silêncio, conquistando espaços na introspecção (160x133cm). Tinta acrílica sobre canvas, 2020."
+        },
+        {
+          "id": 6,
+          "url": "/images/job2/06.jpg",
+          "title": "Pintura com prazer, (120 x 80cm). Tinta acrílica sobre canvas, 2020"
+        },
+        {
+          "id": 7,
+          "url": "/images/job2/07.jpg",
+          "title": "Alegria como forma de resistência, (120x80cm). Tinta acrílica sobre canvas, 2020."
         }
       ]
     },
@@ -124,26 +127,17 @@
         {
           "id": 1,
           "url": "/images/job3/01.jpg",
-          "title": "title",
-          "description": "description"
+          "title": ""
         },
         {
           "id": 2,
           "url": "/images/job3/02.jpg",
-          "title": "title",
-          "description": "description"
+          "title": ""
         },
         {
           "id": 3,
           "url": "/images/job3/03.jpg",
-          "title": "title",
-          "description": "description"
-        },
-        {
-          "id": 4,
-          "url": "/images/job3/04.jpg",
-          "title": "title",
-          "description": "description"
+          "title": ""
         }
       ]
     },
@@ -163,7 +157,55 @@
         { "description": "o tempo do gesto", "class": "text-black" },
         { "description": "dZeit und Geste", "class": "text-black" }
       ],
-      "img": []
+      "img": [
+        {
+          "id": 1,
+          "url": "/images/job4/01.png",
+          "title": ""
+        },
+        {
+          "id": 2,
+          "url": "/images/job4/02.png",
+          "title": ""
+        },
+        {
+          "id": 3,
+          "url": "/images/job4/03.png",
+          "title": ""
+        },
+        {
+          "id": 4,
+          "url": "/images/job4/04.png",
+          "title": ""
+        },
+        {
+          "id": 5,
+          "url": "/images/job4/05.png",
+          "title": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Desenhos",
+      "mainGifUrl": "/images/new-gifs/05.gif",
+      "bottomText": [
+        { "description": "drawings", "class": "text-white" },
+        { "description": "desenhos", "class": "text-black bg-gray darker" },
+        { "description": "Zeichnungen", "class": "text-black" }
+      ],
+      "img": [
+        {
+          "id": 1,
+          "url": "/images/job5/01.png",
+          "title": ""
+        },
+        {
+          "id": 2,
+          "url": "/images/job5/02.png",
+          "title": ""
+        }
+      ]
     }
   ]
 }

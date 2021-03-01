@@ -69,7 +69,7 @@
 .portfolioContent {
   display: flex;
   flex-direction: column;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   position: relative;
 }
 
@@ -89,14 +89,14 @@
 }
 
 .portfolioContentImage {
-  width: 100vw;
+  width: 50vw;
   flex: 1;
   position: relative;
 }
 
 .portfolioContentImage > div {
-  margin-right: 15vw !important;
-  margin-left: 15vw !important;
+  margin-right: 15px !important;
+  margin-left: 15px !important;
 }
 
 .portfolioContentImage {
@@ -125,7 +125,9 @@
   .jobPage {
     grid-template-rows: 60px auto 60px;
   }
-
+  .portfolioContentImage {
+    width: 100vw;
+  }
   .portfolioContentImage > div {
     margin-right: 16px !important;
     margin-left: 16px !important;

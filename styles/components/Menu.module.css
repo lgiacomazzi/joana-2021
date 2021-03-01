@@ -60,6 +60,11 @@
   cursor: pointer;
 }
 
+.menuLink:hover {
+  background-image: url("/images/new-gifs/02.gif");
+  color: white;
+}
+
 .menuBackground > img {
   justify-self: flex-end;
   align-self: flex-end;

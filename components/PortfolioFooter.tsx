@@ -1,15 +1,15 @@
-import { useEffect, useContext, useState } from "react";
-import Image from "next/image";
+import { useContext } from "react";
 
 import { motion } from "framer-motion";
 
 import ArrowButton from "./ArrowButton";
+
 import styles from "../styles/Job.module.css";
 
 import { JobContext } from "../contexts/JobContext";
 
 export default function PortfolioFooter() {
-  const { page, paginate } = useContext(JobContext);
+  const { paginate } = useContext(JobContext);
 
   return (
     <motion.div

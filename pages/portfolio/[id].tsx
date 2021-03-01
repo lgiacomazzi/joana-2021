@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import { AnimatePresence, motion } from "framer-motion";
 
+import SplitText from "../../components/SplitText";
 import ArrowButton from "../../components/ArrowButton";
 import PortfolioBody from "../../components/PortfolioBody";
 import PortfolioFooter from "../../components/PortfolioFooter";

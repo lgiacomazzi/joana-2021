@@ -38,11 +38,17 @@
   width: 40vw;
   height: 100vh;
 
+  display: flex;
+  flex-direction: column;
+
   background-color: rgb(255 255 255 / 10%);
   backdrop-filter: blur(8px);
 
-  padding-top: 12vh;
+  padding-top: 20vh;
   padding-left: 4vw;
+
+  box-shadow: rgb(255 255 255 / 16%) -1px -1px 0px inset,
+    rgb(255 255 255 / 16%) 1px 1px 0px inset;
 }
 
 .menuLink {
@@ -52,6 +58,16 @@
   width: fit-content;
   margin-bottom: 0.5rem;
   cursor: pointer;
+}
+
+.menuBackground > img {
+  justify-self: flex-end;
+  align-self: flex-end;
+  width: 150px;
+  margin-top: auto;
+  margin-bottom: 3vh;
+  filter: invert(1);
+  margin-right: 8vw;
 }
 
 @media (max-width: 762px) {
@@ -64,5 +80,6 @@
 
   .menuBackground {
     width: 100%;
+    padding-top: 12vh;
   }
 }

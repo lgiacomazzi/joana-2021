@@ -12,18 +12,16 @@ export default function Menu() {
 
   const variants = {
     closed: {
-      borderBottomRightRadius: "100vw",
+      borderBottomRightRadius: "100px",
       x: "-100%",
-      y: "-100%",
     },
     open: {
-      borderBottomRightRadius: "0vw",
+      borderBottomRightRadius: "0px",
       x: 0,
-      y: 0,
       transition: {
         type: "spring",
         bounce: 0,
-        delayChildren: 0.5,
+        delayChildren: 0.2,
         staggerChildren: 0.2,
       },
     },
@@ -40,6 +38,7 @@ export default function Menu() {
         <MenuLink>Biografia</MenuLink>
         <MenuLink>Instagram</MenuLink>
         <MenuLink>Contato</MenuLink>
+        <img src="/images/joana-white.svg" />
       </motion.div>
     </motion.nav>
   );

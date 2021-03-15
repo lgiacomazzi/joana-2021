@@ -50,7 +50,6 @@ export default function PortfolioBody({ images }) {
               <Image
                 src={image.url}
                 alt={image.title}
-                priority="eager"
                 layout="fill"
                 objectFit="contain"
               ></Image>

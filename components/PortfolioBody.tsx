@@ -20,7 +20,19 @@ export default function PortfolioBody({ images }) {
   }, [page]);
 
   return (
-    <div id="jobBody" className={styles.portfolioBody} data-position={page}>
+    <motion.div
+      id="jobBody"
+      drag
+      dragElastic={0.2}
+      dragConstraints={{
+        top: -50,
+        left: -1050,
+        right: 50,
+        bottom: 50,
+      }}
+      className={styles.portfolioBody}
+      data-position={page}
+    >
       {images.length === 0 ? (
         <div className={styles.errorSign}>
           <img src="/icons/smiley-sad.svg" />
@@ -31,13 +43,14 @@ export default function PortfolioBody({ images }) {
           <div key={image.id} className={styles.portfolioContent}>
             <motion.div
               className={styles.portfolioContentImage}
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
+              initial={{ scale: 1.2 }}
+              animate={{ scale: 0.8, rotate: [1, 0, -2, 1.2, 0] }}
               transition={{ type: "spring", bounce: 0.5 }}
             >
               <Image
                 src={image.url}
                 alt={image.title}
+                priority="eager"
                 layout="fill"
                 objectFit="contain"
               ></Image>
@@ -61,6 +74,6 @@ export default function PortfolioBody({ images }) {
           </div>
         ))
       )}
-    </div>
+    </motion.div>
   );
 }

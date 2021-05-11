@@ -10,29 +10,22 @@ import styles from "../styles/Job.module.css";
 import { JobContext } from "../contexts/JobContext";
 
 export default function PortfolioBody({ images }) {
-  const { page, portfolioSize, setPortfolioSize } = useContext(JobContext);
+  const { currentPosition, setPortfolioWidth, setClientWidth } =
+    useContext(JobContext);
 
   useEffect(() => {
-    console.log("Mudando a página");
+    //pega o body
     const jobBody = document.getElementById("jobBody");
-    jobBody.scrollLeft = page * jobBody.clientWidth;
-    setPortfolioSize(images.length);
-  }, [page]);
+    // envia o tamanho da tela e tamanho do portfolio
+    setPortfolioWidth(jobBody.scrollWidth);
+    console.log("setPorfolioWidth: " + jobBody.scrollWidth);
+    setClientWidth(jobBody.clientWidth);
+    console.log("setClientWidth: " + jobBody.offsetWidth);
+    jobBody.scrollLeft = currentPosition;
+  });
 
   return (
-    <motion.div
-      id="jobBody"
-      drag
-      dragElastic={0.2}
-      dragConstraints={{
-        top: -50,
-        left: -1050,
-        right: 50,
-        bottom: 50,
-      }}
-      className={styles.portfolioBody}
-      data-position={page}
-    >
+    <div id="jobBody" className={styles.portfolioBody}>
       {images.length === 0 ? (
         <div className={styles.errorSign}>
           <img src="/icons/smiley-sad.svg" />
@@ -73,6 +66,6 @@ export default function PortfolioBody({ images }) {
           </div>
         ))
       )}
-    </motion.div>
+    </div>
   );
 }

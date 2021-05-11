@@ -39,6 +39,8 @@
 }
 
 .portfolioBody {
+  cursor: grab;
+
   margin-top: 60px;
   margin-bottom: 10px;
 
@@ -46,14 +48,14 @@
   flex-direction: row;
 
   /* without framer motion drag */
-  /* width: 100vw; */
-  /* overflow-x: scroll; */
-  /* scroll-behavior: smooth; */
-  /* scroll-snap-stop: always; */
-  /* scroll-snap-type: x mandatory; */
+  width: 100vw;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-stop: always;
+  scroll-snap-type: x mandatory;
 
   /* with framer drag */
-  width: fit-content;
+  /* width: fit-content; */
 
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -123,6 +125,7 @@
   justify-content: center;
 
   padding: 30px;
+  width: 100vw;
 }
 
 @media (max-width: 762px) {

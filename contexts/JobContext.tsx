@@ -1,10 +1,11 @@
 import { createContext, ReactNode, useState } from "react";
 
 type JobContextData = {
-  page: number;
+  currentPosition: number;
   paginate: (number) => void;
-  portfolioSize: number;
-  setPortfolioSize: (number) => void;
+  setClientWidth: (number) => void;
+  setPortfolioWidth: (number) => void;
+  setCurrentPosition: (number) => void;
 };
 
 type JobContextProviderProps = {
@@ -14,24 +15,35 @@ type JobContextProviderProps = {
 export const JobContext = createContext({} as JobContextData);
 
 export function JobContextProvider({ children }: JobContextProviderProps) {
-  const [page, setPage] = useState(0);
-  const [portfolioSize, setPortfolioSize] = useState(0);
+  const [currentPosition, setCurrentPosition] = useState(0);
+  const [clientWidth, setClientWidth] = useState(0);
+  const [portfolioWidth, setPortfolioWidth] = useState(0);
 
   function paginate(newDirection: number) {
+    console.log("clientWidth " + clientWidth);
+    console.log("currentPosition " + currentPosition);
+    console.log("portfolioWidth " + portfolioWidth);
+
     if (newDirection > 0) {
-      if (page < portfolioSize) {
-        setPage(page + newDirection);
+      if (currentPosition + clientWidth < portfolioWidth) {
+        setCurrentPosition(currentPosition + clientWidth);
       }
     } else if (newDirection < 0) {
-      if (page != 0) {
-        setPage(page + newDirection);
+      if (currentPosition > 0) {
+        setCurrentPosition(currentPosition - clientWidth);
       }
     }
   }
 
   return (
     <JobContext.Provider
-      value={{ page, paginate, portfolioSize, setPortfolioSize }}
+      value={{
+        currentPosition,
+        paginate,
+        setClientWidth,
+        setPortfolioWidth,
+        setCurrentPosition,
+      }}
     >
       {children}
     </JobContext.Provider>
